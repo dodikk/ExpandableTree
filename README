@@ -1,0 +1,6 @@
+Yet another implementation of the Tree control.
+It's built upon UITableView.
+
+
+License : BSD
+Supports iOS versions 5.0 and higher. Uses ARC "weak" runtime features

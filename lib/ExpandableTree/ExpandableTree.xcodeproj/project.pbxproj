@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		94A23F7114AA3F940071BE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23F7014AA3F940071BE71 /* Foundation.framework */; };
+		94A23FC714AA425F0071BE71 /* ETExpandableTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */; };
+		94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
+		94A2405E14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */; };
+		94A2406014AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */; };
+		94A2406114AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		94A23F6D14AA3F940071BE71 /* libExpandableTree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpandableTree.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A23F7014AA3F940071BE71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		94A23F7414AA3F940071BE71 /* ExpandableTree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTree-Prefix.pch"; sourceTree = "<group>"; };
+		94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETExpandableTreeView.h; sourceTree = "<group>"; };
+		94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETExpandableTreeView.mm; sourceTree = "<group>"; };
+		94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETExpandableTreeViewDataSource.h; sourceTree = "<group>"; };
+		94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETExpandableTreeViewDelegate.h; sourceTree = "<group>"; };
+		94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETExpandableTreeViewDelegate.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		94A23F6A14AA3F940071BE71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A23F7114AA3F940071BE71 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94A23F6214AA3F940071BE71 = {
+			isa = PBXGroup;
+			children = (
+				94A23F7D14AA3FAB0071BE71 /* Sources */,
+				94A23F7314AA3F940071BE71 /* Supporting Files */,
+				94A23F6F14AA3F940071BE71 /* Frameworks */,
+				94A23F6E14AA3F940071BE71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94A23F6E14AA3F940071BE71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94A23F6D14AA3F940071BE71 /* libExpandableTree.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94A23F6F14AA3F940071BE71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94A23F7014AA3F940071BE71 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94A23F7314AA3F940071BE71 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				94A23F7414AA3F940071BE71 /* ExpandableTree-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = ExpandableTree;
+			sourceTree = "<group>";
+		};
+		94A23F7D14AA3FAB0071BE71 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */,
+				94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */,
+				94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */,
+				94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */,
+				94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		94A23F6B14AA3F940071BE71 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A23FC714AA425F0071BE71 /* ETExpandableTreeView.h in Headers */,
+				94A2405E14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h in Headers */,
+				94A2406014AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		94A23F6C14AA3F940071BE71 /* ExpandableTree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94A23F7A14AA3F940071BE71 /* Build configuration list for PBXNativeTarget "ExpandableTree" */;
+			buildPhases = (
+				94A23F6914AA3F940071BE71 /* Sources */,
+				94A23F6A14AA3F940071BE71 /* Frameworks */,
+				94A23F6B14AA3F940071BE71 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpandableTree;
+			productName = ExpandableTree;
+			productReference = 94A23F6D14AA3F940071BE71 /* libExpandableTree.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		94A23F6414AA3F940071BE71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "EPAM Systems";
+			};
+			buildConfigurationList = 94A23F6714AA3F940071BE71 /* Build configuration list for PBXProject "ExpandableTree" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 94A23F6214AA3F940071BE71;
+			productRefGroup = 94A23F6E14AA3F940071BE71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94A23F6C14AA3F940071BE71 /* ExpandableTree */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		94A23F6914AA3F940071BE71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */,
+				94A2406114AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		94A23F7814AA3F940071BE71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		94A23F7914AA3F940071BE71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		94A23F7B14AA3F940071BE71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ExpandableTree.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExpandableTree/ExpandableTree-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		94A23F7C14AA3F940071BE71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ExpandableTree.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExpandableTree/ExpandableTree-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		94A23F6714AA3F940071BE71 /* Build configuration list for PBXProject "ExpandableTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94A23F7814AA3F940071BE71 /* Debug */,
+				94A23F7914AA3F940071BE71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94A23F7A14AA3F940071BE71 /* Build configuration list for PBXNativeTarget "ExpandableTree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94A23F7B14AA3F940071BE71 /* Debug */,
+				94A23F7C14AA3F940071BE71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 94A23F6414AA3F940071BE71 /* Project object */;
+}
