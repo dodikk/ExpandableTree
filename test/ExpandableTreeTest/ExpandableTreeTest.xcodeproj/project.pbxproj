@@ -7,17 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A30F5C14AB18AB00EE9299 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A30F5A14AB18AB00EE9299 /* GHUnitIOS.framework */; };
+		53A30F6214AB278100EE9299 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A30F6114AB278100EE9299 /* libOCMock.a */; };
+		53A30F6C14AB341100EE9299 /* ETVStubDataSource.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6B14AB341100EE9299 /* ETVStubDataSource.mm */; };
+		53A30F6F14AB347500EE9299 /* ObjcWeakSetterTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6E14AB347500EE9299 /* ObjcWeakSetterTest.mm */; };
+		53A30F9B14AB3F5800EE9299 /* libStubNonArcLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A30F9014AB3CF600EE9299 /* libStubNonArcLibrary.a */; };
+		53A30F9D14AB3F6200EE9299 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A30F9C14AB3F6200EE9299 /* libstdc++.dylib */; };
+		53A30FA114AB453F00EE9299 /* OCWeakMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A30FA014AB453F00EE9299 /* OCWeakMockObject.m */; };
+		53A30FA914AB5FBF00EE9299 /* MockIndexPathComparissonTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30FA814AB5FBF00EE9299 /* MockIndexPathComparissonTest.mm */; };
 		947C80EF14AA317D00F5E860 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947C80EE14AA317D00F5E860 /* UIKit.framework */; };
 		947C80F114AA317D00F5E860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947C80F014AA317D00F5E860 /* Foundation.framework */; };
 		947C80F314AA317E00F5E860 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947C80F214AA317D00F5E860 /* CoreGraphics.framework */; };
 		947C80F914AA317E00F5E860 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 947C80F714AA317E00F5E860 /* InfoPlist.strings */; };
 		947C80FB14AA317E00F5E860 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 947C80FA14AA317E00F5E860 /* main.m */; };
-		94A23EA714AA34710071BE71 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23EA614AA34710071BE71 /* GHUnitIOS.framework */; };
 		94A23EB014AA35B90071BE71 /* DataSourceDelegateCalls.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23EAF14AA35B90071BE71 /* DataSourceDelegateCalls.mm */; };
 		94A23FC014AA41600071BE71 /* libExpandableTree.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23FAE14AA40E80071BE71 /* libExpandableTree.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		53A30F5814AB187F00EE9299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94A23FA614AA40DF0071BE71 /* ExpandableTree.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53A30F5614AB163D00EE9299;
+			remoteInfo = "ExpandableTree-clang";
+		};
+		53A30F8F14AB3CF600EE9299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53A30F8B14AB3CF500EE9299 /* StubNonArcLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53A30F7B14AB3CF400EE9299;
+			remoteInfo = StubNonArcLibrary;
+		};
+		53A30F9914AB3F4F00EE9299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53A30F8B14AB3CF500EE9299 /* StubNonArcLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 53A30F7A14AB3CF400EE9299;
+			remoteInfo = StubNonArcLibrary;
+		};
 		94A23FAD14AA40E80071BE71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94A23FA614AA40DF0071BE71 /* ExpandableTree.xcodeproj */;
@@ -35,6 +63,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53A30F5A14AB18AB00EE9299 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../framework/GHUnitIOS.framework; sourceTree = "<group>"; };
+		53A30F6114AB278100EE9299 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../../framework/OCMockLibrary/libOCMock.a; sourceTree = "<group>"; };
+		53A30F6A14AB341100EE9299 /* ETVStubDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETVStubDataSource.h; sourceTree = "<group>"; };
+		53A30F6B14AB341100EE9299 /* ETVStubDataSource.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETVStubDataSource.mm; sourceTree = "<group>"; };
+		53A30F6E14AB347500EE9299 /* ObjcWeakSetterTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ObjcWeakSetterTest.mm; sourceTree = "<group>"; };
+		53A30F8B14AB3CF500EE9299 /* StubNonArcLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = StubNonArcLibrary.xcodeproj; path = ../StubNonArcLibrary/StubNonArcLibrary.xcodeproj; sourceTree = "<group>"; };
+		53A30F9C14AB3F6200EE9299 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		53A30F9F14AB453F00EE9299 /* OCWeakMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCWeakMockObject.h; sourceTree = "<group>"; };
+		53A30FA014AB453F00EE9299 /* OCWeakMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCWeakMockObject.m; sourceTree = "<group>"; };
+		53A30FA214AB52CC00EE9299 /* 1-ThreeRootsSecondExpanded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-ThreeRootsSecondExpanded.png"; sourceTree = "<group>"; };
+		53A30FA314AB52CC00EE9299 /* 1-ThreeRootsSecondExpanded.xmind */ = {isa = PBXFileReference; lastKnownFileType = file; path = "1-ThreeRootsSecondExpanded.xmind"; sourceTree = "<group>"; };
+		53A30FA814AB5FBF00EE9299 /* MockIndexPathComparissonTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MockIndexPathComparissonTest.mm; sourceTree = "<group>"; };
 		947C80EA14AA317D00F5E860 /* ExpandableTreeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableTreeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947C80EE14AA317D00F5E860 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		947C80F014AA317D00F5E860 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,7 +83,6 @@
 		947C80F814AA317E00F5E860 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		947C80FA14AA317E00F5E860 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		947C80FC14AA317E00F5E860 /* ExpandableTreeTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTreeTest-Prefix.pch"; sourceTree = "<group>"; };
-		94A23EA614AA34710071BE71 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../framework/GHUnitIOS.framework; sourceTree = "<group>"; };
 		94A23EAF14AA35B90071BE71 /* DataSourceDelegateCalls.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataSourceDelegateCalls.mm; sourceTree = "<group>"; };
 		94A23FA614AA40DF0071BE71 /* ExpandableTree.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExpandableTree.xcodeproj; path = ../../lib/ExpandableTree/ExpandableTree.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -53,20 +92,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A30F9B14AB3F5800EE9299 /* libStubNonArcLibrary.a in Frameworks */,
 				94A23FC014AA41600071BE71 /* libExpandableTree.a in Frameworks */,
+				53A30F6214AB278100EE9299 /* libOCMock.a in Frameworks */,
 				947C80EF14AA317D00F5E860 /* UIKit.framework in Frameworks */,
 				947C80F114AA317D00F5E860 /* Foundation.framework in Frameworks */,
 				947C80F314AA317E00F5E860 /* CoreGraphics.framework in Frameworks */,
-				94A23EA714AA34710071BE71 /* GHUnitIOS.framework in Frameworks */,
+				53A30F5C14AB18AB00EE9299 /* GHUnitIOS.framework in Frameworks */,
+				53A30F9D14AB3F6200EE9299 /* libstdc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53A30F4114AB14D500EE9299 /* mock */ = {
+			isa = PBXGroup;
+			children = (
+				53A30F6A14AB341100EE9299 /* ETVStubDataSource.h */,
+				53A30F6B14AB341100EE9299 /* ETVStubDataSource.mm */,
+			);
+			path = mock;
+			sourceTree = SOURCE_ROOT;
+		};
+		53A30F5E14AB1DA700EE9299 /* testData */ = {
+			isa = PBXGroup;
+			children = (
+				53A30FA214AB52CC00EE9299 /* 1-ThreeRootsSecondExpanded.png */,
+				53A30FA314AB52CC00EE9299 /* 1-ThreeRootsSecondExpanded.xmind */,
+			);
+			path = testData;
+			sourceTree = SOURCE_ROOT;
+		};
+		53A30F8C14AB3CF500EE9299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53A30F9014AB3CF600EE9299 /* libStubNonArcLibrary.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53A30F9E14AB452300EE9299 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				53A30F9F14AB453F00EE9299 /* OCWeakMockObject.h */,
+				53A30FA014AB453F00EE9299 /* OCWeakMockObject.m */,
+			);
+			path = OCMock;
+			sourceTree = SOURCE_ROOT;
+		};
 		947C80DF14AA317D00F5E860 = {
 			isa = PBXGroup;
 			children = (
+				53A30F8B14AB3CF500EE9299 /* StubNonArcLibrary.xcodeproj */,
 				94A23FA614AA40DF0071BE71 /* ExpandableTree.xcodeproj */,
 				947C80F414AA317E00F5E860 /* ExpandableTreeTest */,
 				947C80ED14AA317D00F5E860 /* Frameworks */,
@@ -85,7 +163,9 @@
 		947C80ED14AA317D00F5E860 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94A23EA614AA34710071BE71 /* GHUnitIOS.framework */,
+				53A30F9C14AB3F6200EE9299 /* libstdc++.dylib */,
+				53A30F6114AB278100EE9299 /* libOCMock.a */,
+				53A30F5A14AB18AB00EE9299 /* GHUnitIOS.framework */,
 				947C80EE14AA317D00F5E860 /* UIKit.framework */,
 				947C80F014AA317D00F5E860 /* Foundation.framework */,
 				947C80F214AA317D00F5E860 /* CoreGraphics.framework */,
@@ -96,6 +176,9 @@
 		947C80F414AA317E00F5E860 /* ExpandableTreeTest */ = {
 			isa = PBXGroup;
 			children = (
+				53A30F9E14AB452300EE9299 /* OCMock */,
+				53A30F5E14AB1DA700EE9299 /* testData */,
+				53A30F4114AB14D500EE9299 /* mock */,
 				94A23EAD14AA35B90071BE71 /* test */,
 				947C80F514AA317E00F5E860 /* Supporting Files */,
 			);
@@ -117,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				94A23EAF14AA35B90071BE71 /* DataSourceDelegateCalls.mm */,
+				53A30F6E14AB347500EE9299 /* ObjcWeakSetterTest.mm */,
+				53A30FA814AB5FBF00EE9299 /* MockIndexPathComparissonTest.mm */,
 			);
 			path = test;
 			sourceTree = SOURCE_ROOT;
@@ -125,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				94A23FAE14AA40E80071BE71 /* libExpandableTree.a */,
+				53A30F5914AB187F00EE9299 /* libExpandableTree-clang.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +229,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				53A30F9A14AB3F4F00EE9299 /* PBXTargetDependency */,
 				94A23FB014AA40F60071BE71 /* PBXTargetDependency */,
 			);
 			name = ExpandableTreeTest;
@@ -174,6 +261,10 @@
 					ProductGroup = 94A23FA714AA40DF0071BE71 /* Products */;
 					ProjectRef = 94A23FA614AA40DF0071BE71 /* ExpandableTree.xcodeproj */;
 				},
+				{
+					ProductGroup = 53A30F8C14AB3CF500EE9299 /* Products */;
+					ProjectRef = 53A30F8B14AB3CF500EE9299 /* StubNonArcLibrary.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -183,6 +274,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		53A30F5914AB187F00EE9299 /* libExpandableTree-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libExpandableTree-clang.a";
+			remoteRef = 53A30F5814AB187F00EE9299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		53A30F9014AB3CF600EE9299 /* libStubNonArcLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libStubNonArcLibrary.a;
+			remoteRef = 53A30F8F14AB3CF600EE9299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		94A23FAE14AA40E80071BE71 /* libExpandableTree.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -210,12 +315,21 @@
 			files = (
 				947C80FB14AA317E00F5E860 /* main.m in Sources */,
 				94A23EB014AA35B90071BE71 /* DataSourceDelegateCalls.mm in Sources */,
+				53A30F6C14AB341100EE9299 /* ETVStubDataSource.mm in Sources */,
+				53A30F6F14AB347500EE9299 /* ObjcWeakSetterTest.mm in Sources */,
+				53A30FA114AB453F00EE9299 /* OCWeakMockObject.m in Sources */,
+				53A30FA914AB5FBF00EE9299 /* MockIndexPathComparissonTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		53A30F9A14AB3F4F00EE9299 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StubNonArcLibrary;
+			targetProxy = 53A30F9914AB3F4F00EE9299 /* PBXContainerItemProxy */;
+		};
 		94A23FB014AA40F60071BE71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ExpandableTree;
@@ -255,6 +369,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../frameworks/OCMockLibrary/Headers,
+					../../lib,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -274,6 +392,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					../../frameworks/OCMockLibrary/Headers,
+					../../lib,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -288,11 +410,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../framework\"",
+					"\"$(SRCROOT)/../../framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExpandableTreeTest/ExpandableTreeTest-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../lib/ExpandableTree;
+				HEADER_SEARCH_PATHS = (
+					../../framework/OCMockLibrary/Headers,
+					../../lib,
+					../../test,
+				);
 				INFOPLIST_FILE = "ExpandableTreeTest/ExpandableTreeTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../framework/OCMockLibrary\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -308,11 +439,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../framework\"",
+					"\"$(SRCROOT)/../../framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExpandableTreeTest/ExpandableTreeTest-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../lib/ExpandableTree;
+				HEADER_SEARCH_PATHS = (
+					../../framework/OCMockLibrary/Headers,
+					../../lib,
+					../../test,
+				);
 				INFOPLIST_FILE = "ExpandableTreeTest/ExpandableTreeTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../framework/OCMockLibrary\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
