@@ -82,8 +82,7 @@
    return _expandedNodes;
 }
 
--(NSUInteger)nodesNumberForItem:( UIView* )parent_item_ 
-                      indexPath:( NSIndexPath* )parent_index_path_
+-(NSUInteger)nodesNumberForItemAtIndexPath:( NSIndexPath* )parent_index_path_
 {
    NSUInteger result_ = 0;
    
@@ -92,14 +91,12 @@
    result_ = child_number_;
    for ( NSUInteger child_index_ = 0; child_index_ < child_number_; ++child_index_ )
    {
-      NSIndexPath* child_index_path_ = [ parent_index_path_ indexPathByAddingIndex: child_index_ ];
+      NSIndexPath* child_index_path_ = [ NSIndexPath indexPathWithIndex: child_index_
+                                                                 parent: parent_index_path_ ];
+
       if ( [ self.expandedNodes containsObject: child_index_path_ ] )
       {
-         UIView* item_ = [ self.treeViewDataSource treeView: self
-                                            itemAtIndexPath: child_index_path_ ];
-
-         result_ += [ self nodesNumberForItem: item_ 
-                                    indexPath: child_index_path_ ];
+         result_ += [ self nodesNumberForItemAtIndexPath: child_index_path_ ];
       }
    }
 
@@ -128,8 +125,7 @@
       UIView* child_item_ = [ self.treeViewDataSource treeView: self
                                                itemAtIndexPath: child_index_path_ ];
       
-      NSUInteger nodes_number_ = [ self nodesNumberForItem: child_item_
-                                                 indexPath: child_index_path_ ];
+      NSUInteger nodes_number_ = [ self nodesNumberForItemAtIndexPath: child_index_path_ ];
       if ( flat_index_ <= nodes_number_ )
       {
          return  [ self convertFlatIndex: flat_index_  
@@ -156,8 +152,7 @@
 -(NSInteger)tableView:( UITableView* )table_view_ 
 numberOfRowsInSection:( NSInteger )section_
 {
-   return [ self nodesNumberForItem: nil 
-                          indexPath: nil ];
+   return [ self nodesNumberForItemAtIndexPath: nil ];
 }
 
 -(UITableViewCell*)tableView:( UITableView* )table_view_

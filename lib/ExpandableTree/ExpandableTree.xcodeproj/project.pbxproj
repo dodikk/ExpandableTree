@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5382C52014AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
+		5382C52114AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
+		5382C52214AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
+		5382C52314AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
+		5382C52914AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */; };
+		5382C52A14AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */; };
+		5382C52B14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */; };
+		5382C52C14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */; };
+		5382C52E14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */; };
+		5382C52F14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */; };
+		5382C53A14ACA21B004FCA5B /* ETOneLevelTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */; };
+		5382C53B14ACA21B004FCA5B /* ETOneLevelTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */; };
+		53A269FD14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A269FB14AE0FCE00D04855 /* UIView+RemoveSubviews.h */; };
+		53A269FE14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A269FB14AE0FCE00D04855 /* UIView+RemoveSubviews.h */; };
+		53A269FF14AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
+		53A26A0014AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
 		53A30F4614AB15D100EE9299 /* ExpandableTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F4514AB15D100EE9299 /* ExpandableTree.h */; };
 		53A30F4A14AB163D00EE9299 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
 		53A30F4B14AB163D00EE9299 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
@@ -19,6 +35,14 @@
 		53A30F6714AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F6414AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h */; };
 		53A30F6814AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */; };
 		53A30F6914AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */; };
+		53D7A63014ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */; };
+		53D7A63114ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */; };
+		53D7A63514ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */; };
+		53D7A63614ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */; };
+		53D7A63714ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */; };
+		53D7A63814ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */; };
+		53D7A63A14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */; };
+		53D7A63B14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */; };
 		94A23F7114AA3F940071BE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23F7014AA3F940071BE71 /* Foundation.framework */; };
 		94A23FC714AA425F0071BE71 /* ETExpandableTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */; };
 		94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
@@ -28,10 +52,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Construction.h"; sourceTree = "<group>"; };
+		5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Construction.m"; sourceTree = "<group>"; };
+		5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETOneLevelTreeView.h; sourceTree = "<group>"; };
+		5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETOneLevelTreeView.mm; sourceTree = "<group>"; };
+		5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETOneLevelTreeViewDataSource.h; sourceTree = "<group>"; };
+		5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETOneLevelTreeViewDelegate.h; sourceTree = "<group>"; };
+		53A269FB14AE0FCE00D04855 /* UIView+RemoveSubviews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RemoveSubviews.h"; sourceTree = "<group>"; };
+		53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+RemoveSubviews.mm"; sourceTree = "<group>"; };
 		53A30F4514AB15D100EE9299 /* ExpandableTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableTree.h; sourceTree = "<group>"; };
 		53A30F5614AB163D00EE9299 /* libExpandableTree-clang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libExpandableTree-clang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A30F6414AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ETExpandableTreeView+Testing.h"; sourceTree = "<group>"; };
 		53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "ETExpandableTreeView+Testing.mm"; sourceTree = "<group>"; };
+		53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRootIndexStore.h; sourceTree = "<group>"; };
+		53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewWithRootItemIndex.h; sourceTree = "<group>"; };
+		53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewWithRootItemIndex.m; sourceTree = "<group>"; };
+		53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRootItemDelegate.h; sourceTree = "<group>"; };
 		94A23F6D14AA3F940071BE71 /* libExpandableTree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpandableTree.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A23F7014AA3F940071BE71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94A23F7414AA3F940071BE71 /* ExpandableTree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTree-Prefix.pch"; sourceTree = "<group>"; };
@@ -62,6 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5382C51C14AC642F004FCA5B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */,
+				5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */,
+				53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */,
+				53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */,
+				53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */,
+				53A269FB14AE0FCE00D04855 /* UIView+RemoveSubviews.h */,
+				53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		53A30F6314AB2B3900EE9299 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +161,18 @@
 		94A23F7D14AA3FAB0071BE71 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5382C51C14AC642F004FCA5B /* Extensions */,
 				53A30F6314AB2B3900EE9299 /* Detail */,
 				94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */,
 				94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */,
 				94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */,
 				94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */,
 				94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */,
+				5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */,
+				5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */,
+				5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */,
+				5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */,
+				53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -133,6 +189,14 @@
 				53A30F5114AB163D00EE9299 /* ETExpandableTreeViewDelegate.h in Headers */,
 				53A30F5214AB163D00EE9299 /* ExpandableTree.h in Headers */,
 				53A30F6714AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */,
+				5382C52114AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */,
+				5382C52A14AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */,
+				5382C52F14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */,
+				5382C53B14ACA21B004FCA5B /* ETOneLevelTreeViewDelegate.h in Headers */,
+				53D7A63114ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */,
+				53D7A63614ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */,
+				53D7A63B14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */,
+				53A269FE14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +209,14 @@
 				94A2406014AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h in Headers */,
 				53A30F4614AB15D100EE9299 /* ExpandableTree.h in Headers */,
 				53A30F6614AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */,
+				5382C52014AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */,
+				5382C52914AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */,
+				5382C52E14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */,
+				5382C53A14ACA21B004FCA5B /* ETOneLevelTreeViewDelegate.h in Headers */,
+				53D7A63014ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */,
+				53D7A63514ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */,
+				53D7A63A14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */,
+				53A269FD14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +292,10 @@
 				53A30F4A14AB163D00EE9299 /* ETExpandableTreeView.mm in Sources */,
 				53A30F4B14AB163D00EE9299 /* ETExpandableTreeViewDelegate.mm in Sources */,
 				53A30F6914AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */,
+				5382C52314AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */,
+				5382C52C14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */,
+				53D7A63814ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
+				53A26A0014AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +306,10 @@
 				94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */,
 				94A2406114AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm in Sources */,
 				53A30F6814AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */,
+				5382C52214AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */,
+				5382C52B14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */,
+				53D7A63714ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
+				53A269FF14AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

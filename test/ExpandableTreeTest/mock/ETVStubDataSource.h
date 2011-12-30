@@ -1,6 +1,11 @@
 #import <ExpandableTree/ExpandableTree.h>
 #import <Foundation/Foundation.h>
 
-@interface ETVStubDataSource : NSObject<ETExpandableTreeViewDataSource>
+#import "OCWeakMockObject.h"
+
+@interface ETVStubDataSource : OCWeakMockObject<ETExpandableTreeViewDataSource>
+
++(id)mock;
+@property ( nonatomic, strong, readonly ) NSDictionary* childCountMap;
 
 @end

@@ -10,6 +10,11 @@
 @implementation OCWeakMockObject
 @synthesize rawMockObject = _raw_mock_object;
 
+-(struct objc_super)rawSuperForChildren
+{
+   objc_super result_ = { self, [ OCWeakMockObject class ] };
+   return result_;
+}
 
 -(id)initWithRawObject:( OCMockObject* )raw_object_
 {
@@ -40,7 +45,7 @@
    [ invocation_ invokeWithTarget: self.rawMockObject ];
 }
 
-- (BOOL)respondsToSelector:(SEL)aSelector
+-(BOOL)respondsToSelector:(SEL)aSelector
 {
    if ( [super respondsToSelector:aSelector] )
    {

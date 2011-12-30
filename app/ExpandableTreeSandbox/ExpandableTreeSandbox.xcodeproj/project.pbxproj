@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A269E314ADD30700D04855 /* ETSButtonsFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269E214ADD30700D04855 /* ETSButtonsFactory.mm */; };
+		53A269E614ADD62400D04855 /* ETSStreamsListModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269E514ADD62300D04855 /* ETSStreamsListModel.mm */; };
+		53A269E914ADD7E900D04855 /* 1-Expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269E714ADD7E900D04855 /* 1-Expand.png */; };
+		53A269EA14ADD7E900D04855 /* 2-Collapse.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269E814ADD7E900D04855 /* 2-Collapse.png */; };
+		53A269F314ADD81E00D04855 /* 1-All.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269ED14ADD81E00D04855 /* 1-All.png */; };
+		53A269F414ADD81E00D04855 /* 2-Incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269EE14ADD81E00D04855 /* 2-Incoming.png */; };
+		53A269F514ADD81E00D04855 /* 3-Outgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269EF14ADD81E00D04855 /* 3-Outgoing.png */; };
+		53A269F614ADD81E00D04855 /* 4-Streams.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269F014ADD81E00D04855 /* 4-Streams.png */; };
+		53A269F714ADD81E00D04855 /* 5-Recent.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A269F114ADD81E00D04855 /* 5-Recent.png */; };
+		53A269FA14ADEE3C00D04855 /* ETExpandableItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269F914ADEE3C00D04855 /* ETExpandableItem.mm */; };
 		94A23FE814AA49990071BE71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23FE714AA49990071BE71 /* UIKit.framework */; };
 		94A23FEA14AA49990071BE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23FE914AA49990071BE71 /* Foundation.framework */; };
 		94A23FEC14AA49990071BE71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23FEB14AA49990071BE71 /* CoreGraphics.framework */; };
@@ -19,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		53B2369414ADC59A00DF7BAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94A2400814AA4A8B0071BE71 /* ExpandableTree.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 53A30F5614AB163D00EE9299;
+			remoteInfo = "ExpandableTree-clang";
+		};
 		94A2400C14AA4A8B0071BE71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94A2400814AA4A8B0071BE71 /* ExpandableTree.xcodeproj */;
@@ -36,6 +53,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53A269DD14ADD22C00D04855 /* collapse-hypnotab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "collapse-hypnotab.png"; sourceTree = "<group>"; };
+		53A269DE14ADD22C00D04855 /* expand-hypnotab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "expand-hypnotab.jpg"; sourceTree = "<group>"; };
+		53A269E114ADD30700D04855 /* ETSButtonsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSButtonsFactory.h; sourceTree = "<group>"; };
+		53A269E214ADD30700D04855 /* ETSButtonsFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETSButtonsFactory.mm; sourceTree = "<group>"; };
+		53A269E414ADD62300D04855 /* ETSStreamsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSStreamsListModel.h; sourceTree = "<group>"; };
+		53A269E514ADD62300D04855 /* ETSStreamsListModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETSStreamsListModel.mm; sourceTree = "<group>"; };
+		53A269E714ADD7E900D04855 /* 1-Expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-Expand.png"; sourceTree = "<group>"; };
+		53A269E814ADD7E900D04855 /* 2-Collapse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-Collapse.png"; sourceTree = "<group>"; };
+		53A269EC14ADD81E00D04855 /* 01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01.png; sourceTree = "<group>"; };
+		53A269ED14ADD81E00D04855 /* 1-All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1-All.png"; sourceTree = "<group>"; };
+		53A269EE14ADD81E00D04855 /* 2-Incoming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-Incoming.png"; sourceTree = "<group>"; };
+		53A269EF14ADD81E00D04855 /* 3-Outgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3-Outgoing.png"; sourceTree = "<group>"; };
+		53A269F014ADD81E00D04855 /* 4-Streams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4-Streams.png"; sourceTree = "<group>"; };
+		53A269F114ADD81E00D04855 /* 5-Recent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5-Recent.png"; sourceTree = "<group>"; };
+		53A269F814ADEE3C00D04855 /* ETExpandableItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETExpandableItem.h; sourceTree = "<group>"; };
+		53A269F914ADEE3C00D04855 /* ETExpandableItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETExpandableItem.mm; sourceTree = "<group>"; };
 		94A23FE314AA49990071BE71 /* ExpandableTreeSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpandableTreeSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A23FE714AA49990071BE71 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		94A23FE914AA49990071BE71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,10 +100,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53A269DC14ADD22B00D04855 /* ExpandIcons */ = {
+			isa = PBXGroup;
+			children = (
+				53A269E714ADD7E900D04855 /* 1-Expand.png */,
+				53A269E814ADD7E900D04855 /* 2-Collapse.png */,
+				53A269DD14ADD22C00D04855 /* collapse-hypnotab.png */,
+				53A269DE14ADD22C00D04855 /* expand-hypnotab.jpg */,
+			);
+			path = ExpandIcons;
+			sourceTree = "<group>";
+		};
+		53A269EB14ADD81E00D04855 /* StreamIcons */ = {
+			isa = PBXGroup;
+			children = (
+				53A269EC14ADD81E00D04855 /* 01.png */,
+				53A269ED14ADD81E00D04855 /* 1-All.png */,
+				53A269EE14ADD81E00D04855 /* 2-Incoming.png */,
+				53A269EF14ADD81E00D04855 /* 3-Outgoing.png */,
+				53A269F014ADD81E00D04855 /* 4-Streams.png */,
+				53A269F114ADD81E00D04855 /* 5-Recent.png */,
+			);
+			path = StreamIcons;
+			sourceTree = "<group>";
+		};
 		94A23FD814AA49990071BE71 = {
 			isa = PBXGroup;
 			children = (
 				94A2400814AA4A8B0071BE71 /* ExpandableTree.xcodeproj */,
+				53A269EB14ADD81E00D04855 /* StreamIcons */,
+				53A269DC14ADD22B00D04855 /* ExpandIcons */,
 				94A23FED14AA49990071BE71 /* ExpandableTreeSandbox */,
 				94A23FE614AA49990071BE71 /* Frameworks */,
 				94A23FE414AA49990071BE71 /* Products */,
@@ -104,6 +163,12 @@
 				94A23FF614AA49990071BE71 /* AppDelegate.h */,
 				94A23FF714AA49990071BE71 /* AppDelegate.m */,
 				94A23FEE14AA49990071BE71 /* Supporting Files */,
+				53A269E114ADD30700D04855 /* ETSButtonsFactory.h */,
+				53A269E214ADD30700D04855 /* ETSButtonsFactory.mm */,
+				53A269E414ADD62300D04855 /* ETSStreamsListModel.h */,
+				53A269E514ADD62300D04855 /* ETSStreamsListModel.mm */,
+				53A269F814ADEE3C00D04855 /* ETExpandableItem.h */,
+				53A269F914ADEE3C00D04855 /* ETExpandableItem.mm */,
 			);
 			path = ExpandableTreeSandbox;
 			sourceTree = "<group>";
@@ -123,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				94A2400D14AA4A8B0071BE71 /* libExpandableTree.a */,
+				53B2369514ADC59A00DF7BAB /* libExpandableTree-clang.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +247,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		53B2369514ADC59A00DF7BAB /* libExpandableTree-clang.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libExpandableTree-clang.a";
+			remoteRef = 53B2369414ADC59A00DF7BAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		94A2400D14AA4A8B0071BE71 /* libExpandableTree.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -197,6 +270,13 @@
 			files = (
 				94A23FF214AA49990071BE71 /* InfoPlist.strings in Resources */,
 				94A2405614AA4E360071BE71 /* ViewController.xib in Resources */,
+				53A269E914ADD7E900D04855 /* 1-Expand.png in Resources */,
+				53A269EA14ADD7E900D04855 /* 2-Collapse.png in Resources */,
+				53A269F314ADD81E00D04855 /* 1-All.png in Resources */,
+				53A269F414ADD81E00D04855 /* 2-Incoming.png in Resources */,
+				53A269F514ADD81E00D04855 /* 3-Outgoing.png in Resources */,
+				53A269F614ADD81E00D04855 /* 4-Streams.png in Resources */,
+				53A269F714ADD81E00D04855 /* 5-Recent.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +290,9 @@
 				94A23FF414AA49990071BE71 /* main.m in Sources */,
 				94A23FF814AA49990071BE71 /* AppDelegate.m in Sources */,
 				94A2405514AA4E360071BE71 /* ViewController.mm in Sources */,
+				53A269E314ADD30700D04855 /* ETSButtonsFactory.mm in Sources */,
+				53A269E614ADD62400D04855 /* ETSStreamsListModel.mm in Sources */,
+				53A269FA14ADEE3C00D04855 /* ETExpandableItem.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +338,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -274,6 +358,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
@@ -287,7 +372,6 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExpandableTreeSandbox/ExpandableTreeSandbox-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../lib/ExpandableTree;
 				INFOPLIST_FILE = "ExpandableTreeSandbox/ExpandableTreeSandbox-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -304,7 +388,6 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ExpandableTreeSandbox/ExpandableTreeSandbox-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../../lib/ExpandableTree;
 				INFOPLIST_FILE = "ExpandableTreeSandbox/ExpandableTreeSandbox-Info.plist";
 				OTHER_LDFLAGS = (
 					"-ObjC",
