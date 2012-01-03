@@ -16,8 +16,7 @@
  @return The number of child items encompassed by parent_item_. If item is nil, this method should return the number of children for the top-level item.
  */
 -(NSUInteger)treeView:( ETExpandableTreeView* )tree_view_
-numberOfChildrenOfItem:( UIView* )parent_item_
-            indexPath:( NSIndexPath* )parent_index_path_;
+numberOfChildrenForItemAtIndexPath:( NSIndexPath* )parent_index_path_;
 
 /** Returns the child item at the specified index of a given item.
  @param tree_view_ The tree view that sent the message.
@@ -26,8 +25,7 @@ numberOfChildrenOfItem:( UIView* )parent_item_
  @return The child item at index of a item. If item is nil, returns the appropriate child item of the root object.
  */
 -(UIView*)treeView:( ETExpandableTreeView* )tree_view_
-       childOfItem:( UIView* )parent_item_
-         indexPath:( NSIndexPath* )child_index_path_;
+   itemAtIndexPath:( NSIndexPath* )child_index_path_;
 
 /** Returns a Boolean value that indicates whether the a given item is expandable.
  @param tree_view_ The tree view that sent the message.
@@ -36,7 +34,6 @@ numberOfChildrenOfItem:( UIView* )parent_item_
  @return YES if item can be expanded to display its children, otherwise NO.
  */
 -(BOOL)treeView:( ETExpandableTreeView* )tree_view_
-isItemExpandable:( UIView* )item_
-      indexPath:( NSIndexPath* )index_path_;
+isExpandableItemAtIndexPath:( NSIndexPath* )index_path_;
 
 @end

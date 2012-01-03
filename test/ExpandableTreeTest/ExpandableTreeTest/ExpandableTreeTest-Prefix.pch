@@ -1,6 +1,3 @@
-//
-// Prefix header for all source files of the 'ExpandableTreeTest' target in the 'ExpandableTreeTest' project
-//
 
 #import <Availability.h>
 
@@ -9,6 +6,12 @@
 #endif
 
 #ifdef __OBJC__
+   #import "OCWeakMockObject.h"
+
+   #import <ExpandableTree/ExpandableTree.h>
+   #import <ExpandableTree/Detail/ETExpandableTreeView+Testing.h>
+
+   #import <OCMock/OCMock.h>
    #import <GHUnitIOS/GHUnit.h>
    #import <Foundation/Foundation.h>
 #endif

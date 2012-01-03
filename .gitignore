@@ -7,3 +7,8 @@ svnignore.*
 *.pbxuser
 xcuserdata
 *.xcworkspace
+
+01.png
+
+## This is due to the NDA
+*.png
