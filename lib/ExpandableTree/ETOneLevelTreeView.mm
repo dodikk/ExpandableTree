@@ -7,13 +7,25 @@
 #import "UIViewWithRootItemIndex.h"
 #import "ETRootItemDelegate.h"
 
+#import "ETIndexPathFactory.h"
+
 #import "UIView+RemoveSubviews.h"
 
-static const NSInteger ETHeaderCellIndex   = 0;
-static const NSInteger ETClickableCellSize = 1;
+#include <map>
 
+//disable logging workaround
+#import "DisableLogsMacro.h"
+
+static const NSInteger ETHeaderCellIndex = 0;
+static const NSInteger ETHeaderCell      = 1;
+
+typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
 
 @interface ETOneLevelTreeView() <UITableViewDataSource, UITableViewDelegate>
+{
+@private
+   ExpandedStateMapType expandedStateMap;
+}
 
 @property ( nonatomic, strong ) UITableView* tableView;
 
@@ -27,9 +39,8 @@ static const NSInteger ETClickableCellSize = 1;
 -(void)expandChildrenForRootItem:( NSInteger )root_index_;
 -(void)collapseChildrenForRootItem:( NSInteger )root_index_;
 
--(NSArray*)indexPathItemForSection:( NSInteger )section_;
--(NSArray*)indexPathItemsForRange:( NSRange )range_
-                          section:( NSInteger )section_;
+-(BOOL)assertTableView:(UITableView*)tableView_;
+-(BOOL)assertDelegates;
 
 @end
 
@@ -40,6 +51,12 @@ static const NSInteger ETClickableCellSize = 1;
 @synthesize tableView  = _tableView ;
 
 
+-(void)dealloc
+{
+   self->_tableView.delegate   = nil;
+   self->_tableView.dataSource = nil;
+}
+
 -(void)setupTableView
 {
    self.tableView = [ UITableView new ];
@@ -47,7 +64,7 @@ static const NSInteger ETClickableCellSize = 1;
    self.tableView.delegate   = self;
    
    CGRect table_frame_ = self.frame;
-   table_frame_.origin = CGPointMake( 0.f, 0.f );
+   table_frame_.origin = CGPointZero;
    
    self.tableView.frame = table_frame_;
    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -76,34 +93,109 @@ static const NSInteger ETClickableCellSize = 1;
 
 -(void)reloadData
 {  
-#ifndef OCMOCK_TEST
+   [ self.tableView reloadData ];
+}
+
+
+#pragma mark -
+#pragma mark DelegateSetters
+-(void)setDelegate:(id<ETOneLevelTreeViewDelegate>)delegate_
+{
+   self->expandedStateMap.clear();
+   self->_delegate = delegate_;
+}
+
+-(void)setDataSource:(id<ETOneLevelTreeViewDataSource>)dataSource_
+{
+   self->expandedStateMap.clear();
+   self->_dataSource = dataSource_;
+}
+
+
+#pragma mark - 
+#pragma mark ExpandState
+-(void)setExpandState:( BOOL )new_state_
+         forRootIndex:( NSInteger )root_index_
+{
+   BOOL is_expandable_ = [ self.dataSource treeView: self
+                        isExpandableRootItemAtIndex: root_index_ ];
+   if ( !is_expandable_ )
    {
-      [ self.tableView reloadData ];
+      return;
    }
-#else
+   
+   self->expandedStateMap[ root_index_ ] = new_state_;
+}
+
+-(BOOL)isExpandedRootItemAtIndex:( NSInteger )root_index_
+{
+   BOOL is_expandable_ = [ self.dataSource treeView: self
+                        isExpandableRootItemAtIndex: root_index_ ];
+   
+   if ( !is_expandable_ )
    {
-      NSInteger roots_count_ = [ self.dataSource numberOfRootItemsInTreeView: self ];
-      
-      for ( NSInteger root_index_ = 0; root_index_ < roots_count_; ++root_index_ )
-      {
-         BOOL is_item_expandable_ = [ self.dataSource treeView: self
-                                   isExpandableRootItemAtIndex: root_index_ ];
-         
-         
-         [ self.dataSource treeView: self 
-             cellForRootItemAtIndex: root_index_ ];
-         
-         if ( is_item_expandable_ )
-         {
-            [ self.dataSource treeView: self numberOfChildItemsForRootAtIndex: root_index_ ];  
-         }
-      }
+      return NO;
    }
-#endif   
+   
+   return self->expandedStateMap[ root_index_ ];
+}
+
+-(NSInteger)numberOfChildrenForRootItemAtIndex:( NSInteger )root_index_
+{
+   if ( [ self isExpandedRootItemAtIndex: root_index_ ] )
+   {
+      return [ self.dataSource treeView: self
+       numberOfChildItemsForRootAtIndex: root_index_ ];
+   }
+   
+   return 0;
+}
+
+-(UIView*)expandButtonForRootItemAtIndex:( NSInteger )root_index_
+{
+   UIView* expand_button_ = nil;
+   BOOL should_query_expand_button_ = [ self.dataSource treeView: self
+                                     isExpandableRootItemAtIndex: root_index_ ];
+   if ( !should_query_expand_button_ )
+   {
+      return nil;
+   }   
+
+   
+   if ( [ self isExpandedRootItemAtIndex: root_index_ ] )
+   {
+      expand_button_ = [ self.delegate treeView: self 
+               collapseButtonForRootItemAtIndex: root_index_ ];
+   }
+   else
+   {
+      expand_button_ = [ self.delegate treeView: self
+                 expandButtonForRootItemAtIndex: root_index_ ];
+   }  
+
+   expand_button_.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+   return expand_button_;
 }
 
 #pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark assertions
+-(BOOL)assertDelegates
+{
+   if ( nil == self.delegate )
+   {
+      NSAssert( NO, @"ETOneLevelTreeView : delegate not initialized" );
+      return NO;
+   }
+
+   if ( nil == self.dataSource )
+   {
+      NSAssert( NO, @"ETOneLevelTreeView : dataSource not initialized" );
+      return NO;
+   }
+
+   return YES;
+}
+
 -(BOOL)assertTableView:(UITableView*)tableView_
 {
    if ( self.tableView != tableView_ )
@@ -112,10 +204,12 @@ static const NSInteger ETClickableCellSize = 1;
       return NO;
    }
    
-   return YES;
+   return [ self assertDelegates ];
 }
 
 
+#pragma mark -
+#pragma mark UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView_
 {  
    [ self assertTableView: tableView_ ];
@@ -130,19 +224,10 @@ static const NSInteger ETClickableCellSize = 1;
  numberOfRowsInSection:(NSInteger)section_
 {
    [ self assertTableView: tableView_ ];
-   
-   NSInteger result_ = ETClickableCellSize;
-   
-   BOOL is_expandable_section_ = [ self.dataSource treeView: self
-                                isExpandableRootItemAtIndex: section_ ];
-   if ( is_expandable_section_ )
-   {
-      result_ += [ self.dataSource treeView: self
-           numberOfChildItemsForRootAtIndex: section_ ];
-   }
 
+   NSInteger result_ = ETHeaderCell + [ self numberOfChildrenForRootItemAtIndex: section_ ];
    NSLog( @"ETOneLevelTreeView->numberOfRowsInSection[%d] - %d", section_, result_ );
-   
+
    return result_;
 }
 
@@ -174,10 +259,12 @@ static const NSInteger ETClickableCellSize = 1;
 -(NSIndexPath*)tableView:(UITableView*)tableView_
 willSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 {
+   [ self assertTableView: tableView_ ];
+   
    if ( ETHeaderCellIndex != indexPath_.row )
    {      
       [ self.delegate treeView: self
-    willSelectChildItemAtIndex: indexPath_.row - ETClickableCellSize
+    willSelectChildItemAtIndex: indexPath_.row - ETHeaderCell
                    forRootItem: indexPath_.section ];
    }
    
@@ -187,6 +274,8 @@ willSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 -(void)tableView:(UITableView*)tableView_
 didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 {
+   [ self assertTableView: tableView_ ];
+   
    if ( ETHeaderCellIndex == indexPath_.row )
    {
       [ self toggleRootItemAtIndex: indexPath_.section ];
@@ -195,25 +284,27 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 
    
    [ self.delegate treeView: self 
-  didSelectChildItemAtIndex: indexPath_.row - ETClickableCellSize
+  didSelectChildItemAtIndex: indexPath_.row - ETHeaderCell
                 forRootItem: indexPath_.section ];
 }
 
 -(void)toggleRootItemAtIndex:( NSInteger )root_index_
-{
-   BOOL is_expanded_ = [ self.dataSource treeView: self
-                        isExpandedRootItemAtIndex: root_index_ ];
+{  
+   BOOL is_expanded_ = [ self isExpandedRootItemAtIndex: root_index_ ];
 
    // dodikk : The order matters
 
+   [ self setExpandState: !is_expanded_
+            forRootIndex: root_index_ ];
+   
    [ self.tableView beginUpdates ];
    {
       if ( is_expanded_ )
       {        
-            [ self collapseChildrenForRootItem: root_index_ ];
-            
-            [ self.delegate treeView: self
-            didToggleRootItemAtIndex: root_index_ ];
+         [ self collapseChildrenForRootItem: root_index_ ];
+
+         [ self.delegate treeView: self
+         didToggleRootItemAtIndex: root_index_ ];
       }
       else
       {
@@ -222,8 +313,8 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 
          [ self expandChildrenForRootItem: root_index_ ];
       }
-      
-      [ self.tableView reloadRowsAtIndexPaths: [ self indexPathItemForSection: root_index_ ] 
+
+      [ self.tableView reloadRowsAtIndexPaths: [ ETIndexPathFactory indexPathItemForSection: root_index_ ] 
                              withRowAnimation: UITableViewRowAnimationNone ];
    }
    [ self.tableView endUpdates ];
@@ -236,13 +327,12 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
    NSInteger number_of_items_to_expand_ = [ self.dataSource treeView: self
                                     numberOfChildItemsForRootAtIndex: root_index_ ];
    
-   
-   NSArray* insertion_ = [ self indexPathItemsForRange: NSMakeRange( ETClickableCellSize, number_of_items_to_expand_ )
-                                               section: root_index_ ];
+   NSRange insertion_range_ = NSMakeRange( ETHeaderCell, static_cast<NSUInteger>( number_of_items_to_expand_ ) );
+   NSArray* insertion_ = [ ETIndexPathFactory indexPathItemsForRange: insertion_range_
+                                                             section: root_index_ ];
    
    [ self.tableView insertRowsAtIndexPaths: insertion_
                           withRowAnimation: UITableViewRowAnimationTop ];
-   
 }
 
 -(void)collapseChildrenForRootItem:( NSInteger )root_index_
@@ -250,9 +340,9 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
    NSInteger number_of_items_to_shrink_ = [ self.dataSource treeView: self
                                     numberOfChildItemsForRootAtIndex: root_index_ ];
    
-   
-   NSArray* deletion_ = [ self indexPathItemsForRange: NSMakeRange( ETClickableCellSize, number_of_items_to_shrink_ )
-                                              section: root_index_ ];
+   NSRange deletion_range_ = NSMakeRange( ETHeaderCell, static_cast<NSUInteger>( number_of_items_to_shrink_ ) );
+   NSArray* deletion_ = [ ETIndexPathFactory indexPathItemsForRange: deletion_range_
+                                                            section: root_index_ ];
    
    [ self.tableView deleteRowsAtIndexPaths: deletion_
                           withRowAnimation: UITableViewRowAnimationTop ];
@@ -261,36 +351,54 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 
 -(UITableViewCell *)rootCellAtIndex:( NSInteger )root_index_
 {
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: @"RootCell" ];
+   static NSString* const reuse_id_ = @"RootCell";
+   
+   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
    
    if ( nil == result_ )
    {
       result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault 
-                                          reuseIdentifier: @"RootCell" ];
+                                          reuseIdentifier: reuse_id_ ];
    }
+
+
+   [ result_.contentView removeAllSubviews ];
    
    //content
    UIView* content_view_ = [ self.dataSource treeView: self
-                               cellForRootItemAtIndex: root_index_ ];
+                        contentViewForRootItemAtIndex: root_index_ ];
+
+   NSAssert1( [ content_view_ isKindOfClass: [ UIView class ] ]
+             , @"ETOneLevelTreeView->rootCellAtIndex[%d] : invalid contentView received", root_index_ );
 
    
-   
-   content_view_.frame = result_.contentView.frame;
+   CGRect content_view_frame_ = result_.contentView.frame;
+   content_view_frame_.origin = CGPointZero;
+
+   content_view_.frame = content_view_frame_;
    content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-   [ result_.contentView removeAllSubviews ];
    [ result_.contentView addSubview: content_view_ ];      
    
    
    //accessory
-   UIView* expand_button_ = nil;
-   BOOL should_query_expand_button_ = [ self.dataSource treeView: self
-                                     isExpandableRootItemAtIndex: root_index_ ];
-   if ( should_query_expand_button_ )
+   UIView* expand_button_ = [ self expandButtonForRootItemAtIndex: root_index_ ];
+   if ( nil == expand_button_ )
    {
-      expand_button_ = [ self.delegate treeView: self
-                 expandButtonForRootItemAtIndex: root_index_ ];      
+      return result_;
    }
-   result_.imageView.image = [ (UIImageView*)expand_button_ image] ;      
+
+   
+   // combine
+   CGRect expand_button_rect_ = expand_button_.frame;
+   expand_button_rect_.origin = CGPointZero;
+   expand_button_rect_.size.height = result_.contentView.frame.size.height;
+
+   content_view_frame_.origin.x = expand_button_rect_.size.width;
+   
+   expand_button_.frame = expand_button_rect_;
+   content_view_.frame  = content_view_frame_;
+   
+   [ result_.contentView addSubview: expand_button_ ];
 
    
    return result_;
@@ -298,52 +406,26 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
 
 -(UITableViewCell *)childCellAtIndexPath:(NSIndexPath *)indexPath_
 {
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: @"ChildCell" ];
+   static NSString* const reuse_id_ = @"ChildCell";
+   
+   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
    if ( nil == result_ )
    {
-      result_ = [ [UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                         reuseIdentifier: @"ChildCell" ];
-      
-      UIView* content_view_ = [ self.dataSource treeView: self
-                                 cellForChildItemAtIndex: indexPath_.row - ETClickableCellSize
-                                             parentIndex: indexPath_.section ];
-      
-      content_view_.frame = result_.contentView.frame;
-      content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-      [ result_.contentView addSubview: content_view_ ];
+      result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
+                                          reuseIdentifier: reuse_id_ ];      
    }
+
+   [ result_.contentView removeAllSubviews ];
+   UIView* content_view_ = [ self.dataSource treeView: self
+                       contentViewForChildItemAtIndex: indexPath_.row - ETHeaderCell
+                                          parentIndex: indexPath_.section ];
+   
+   content_view_.frame = result_.contentView.frame;
+   content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+   [ result_.contentView addSubview: content_view_ ];
+
    
    return result_;
-}
-
-#pragma mark -
-#pragma mark IndexPath helpers
--(NSArray*)indexPathItemForSection:( NSInteger )section_       
-{
-   NSIndexPath* single_result_ = [ NSIndexPath indexPathForRow: ETHeaderCellIndex
-                                                     inSection: section_ ];
-   
-   NSArray* result_ = [ NSArray arrayWithObject: single_result_ ];
-   
-   return result_;
-}
-
--(NSArray*)indexPathItemsForRange:( NSRange )range_
-                          section:( NSInteger )section_
-{
-   //TODO : extract factory
-   
-   NSMutableArray* result_ = [ NSMutableArray array ];
-   
-   NSInteger i_ = range_.location;
-   while ( NSLocationInRange( i_, range_ ) )
-   {
-      [ result_ addObject: [ NSIndexPath indexPathForRow: i_
-                                               inSection: section_ ] ];
-      ++i_;
-   }
-   
-   return [ NSArray arrayWithArray: result_];
 }
 
 

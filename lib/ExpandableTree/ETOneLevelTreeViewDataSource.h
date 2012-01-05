@@ -16,13 +16,10 @@ isExpandableRootItemAtIndex:( NSInteger )root_index_;
 numberOfChildItemsForRootAtIndex:( NSInteger )root_index_;
 
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
-cellForRootItemAtIndex:( NSInteger )root_index_;
+contentViewForRootItemAtIndex:( NSInteger )root_index_;
 
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
-cellForChildItemAtIndex:( NSInteger )schild_index_
+contentViewForChildItemAtIndex:( NSInteger )schild_index_
        parentIndex:( NSInteger )root_index_;
-
--(BOOL)treeView:( ETOneLevelTreeView* )tree_view_
-isExpandedRootItemAtIndex:( NSInteger )root_index_;
 
 @end

@@ -21,12 +21,7 @@
 
 -(NSInteger)childrenCount
 {
-   if ( self.isExpanded )
-   {
-      return [ self.model count ];
-   }
-   
-   return 0;
+   return [ self.model count ];
 }
 
 -(UIView*)childViewCellAtIndex:( NSInteger )index_
