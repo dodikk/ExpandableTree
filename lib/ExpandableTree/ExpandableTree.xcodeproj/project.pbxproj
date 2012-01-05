@@ -16,9 +16,13 @@
 		537B513614B5DB4200040AE4 /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
 		537B513714B5DB4200040AE4 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
 		537B513814B5DB4200040AE4 /* ETIndexPathFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */; };
-		537B513914B5DB4200040AE4 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
-		537B513A14B5DB4200040AE4 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
 		537B513B14B5DB4200040AE4 /* ETOneLevelTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */; };
+		537B515114B5DEB300040AE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537B515014B5DEB300040AE4 /* UIKit.framework */; };
+		537B515414B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 537B515314B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm */; };
+		537B515514B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 537B515314B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm */; };
+		537B515614B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 537B515314B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm */; };
+		537B515714B5DFE400040AE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537B515014B5DEB300040AE4 /* UIKit.framework */; };
+		537B515814B5DFFC00040AE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537B515014B5DEB300040AE4 /* UIKit.framework */; };
 		5382C52014AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
 		5382C52114AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
 		5382C52214AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
@@ -60,6 +64,8 @@
 		537B512914B5DA6200040AE4 /* ExpandableTreeFW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpandableTreeFW-Info.plist"; sourceTree = "<group>"; };
 		537B512B14B5DA6200040AE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		537B512D14B5DA6200040AE4 /* ExpandableTreeFW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTreeFW-Prefix.pch"; sourceTree = "<group>"; };
+		537B515014B5DEB300040AE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		537B515314B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETOneLevelTreeViewDelegate.mm; sourceTree = "<group>"; };
 		5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Construction.h"; sourceTree = "<group>"; };
 		5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Construction.m"; sourceTree = "<group>"; };
 		5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETOneLevelTreeView.h; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537B515114B5DEB300040AE4 /* UIKit.framework in Frameworks */,
 				537B512614B5DA6200040AE4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537B515814B5DFFC00040AE4 /* UIKit.framework in Frameworks */,
 				53A30F4D14AB163D00EE9299 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537B515714B5DFE400040AE4 /* UIKit.framework in Frameworks */,
 				94A23F7114AA3F940071BE71 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +202,7 @@
 		94A23F6F14AA3F940071BE71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				537B515014B5DEB300040AE4 /* UIKit.framework */,
 				94A23F7014AA3F940071BE71 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -222,6 +232,7 @@
 				5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */,
 				5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */,
 				5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */,
+				537B515314B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm */,
 				53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */,
 			);
 			name = Sources;
@@ -427,9 +438,8 @@
 				537B513614B5DB4200040AE4 /* NSIndexPath+Construction.m in Sources */,
 				537B513714B5DB4200040AE4 /* UIView+RemoveSubviews.mm in Sources */,
 				537B513814B5DB4200040AE4 /* ETIndexPathFactory.mm in Sources */,
-				537B513914B5DB4200040AE4 /* ETExpandableTreeView.mm in Sources */,
-				537B513A14B5DB4200040AE4 /* ETExpandableTreeViewDelegate.mm in Sources */,
 				537B513B14B5DB4200040AE4 /* ETOneLevelTreeView.mm in Sources */,
+				537B515614B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +452,7 @@
 				53D7A63814ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
 				53A26A0014AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
 				53F3B66714B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */,
+				537B515514B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +465,7 @@
 				53D7A63714ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
 				53A269FF14AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
 				53F3B66614B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */,
+				537B515414B5DF3000040AE4 /* ETOneLevelTreeViewDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +651,7 @@
 				537B512F14B5DA6200040AE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53A30F5314AB163D00EE9299 /* Build configuration list for PBXNativeTarget "ExpandableTree-clang" */ = {
 			isa = XCConfigurationList;
