@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		537B512614B5DA6200040AE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23F7014AA3F940071BE71 /* Foundation.framework */; };
+		537B512C14B5DA6200040AE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 537B512A14B5DA6200040AE4 /* InfoPlist.strings */; };
+		537B513214B5DB0500040AE4 /* ExpandableTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F4514AB15D100EE9299 /* ExpandableTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537B513314B5DB0500040AE4 /* ETOneLevelTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537B513414B5DB0500040AE4 /* ETOneLevelTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C52D14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537B513514B5DB0500040AE4 /* ETOneLevelTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C53914ACA21A004FCA5B /* ETOneLevelTreeViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		537B513614B5DB4200040AE4 /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
+		537B513714B5DB4200040AE4 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
+		537B513814B5DB4200040AE4 /* ETIndexPathFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */; };
+		537B513914B5DB4200040AE4 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
+		537B513A14B5DB4200040AE4 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
+		537B513B14B5DB4200040AE4 /* ETOneLevelTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5382C52814AC852B004FCA5B /* ETOneLevelTreeView.mm */; };
 		5382C52014AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
 		5382C52114AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */; };
 		5382C52214AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */; };
@@ -24,17 +36,10 @@
 		53A269FF14AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
 		53A26A0014AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A269FC14AE0FCE00D04855 /* UIView+RemoveSubviews.mm */; };
 		53A30F4614AB15D100EE9299 /* ExpandableTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F4514AB15D100EE9299 /* ExpandableTree.h */; };
-		53A30F4A14AB163D00EE9299 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
-		53A30F4B14AB163D00EE9299 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
 		53A30F4D14AB163D00EE9299 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23F7014AA3F940071BE71 /* Foundation.framework */; };
-		53A30F4F14AB163D00EE9299 /* ETExpandableTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */; };
-		53A30F5014AB163D00EE9299 /* ETExpandableTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */; };
-		53A30F5114AB163D00EE9299 /* ETExpandableTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */; };
 		53A30F5214AB163D00EE9299 /* ExpandableTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F4514AB15D100EE9299 /* ExpandableTree.h */; };
-		53A30F6614AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F6414AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h */; };
-		53A30F6714AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A30F6414AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h */; };
-		53A30F6814AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */; };
-		53A30F6914AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */; };
+		53A4A00714B2FDE700A8BDD5 /* DisableLogsMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A4A00614B2FDE700A8BDD5 /* DisableLogsMacro.h */; };
+		53A4A00814B2FDE700A8BDD5 /* DisableLogsMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 53A4A00614B2FDE700A8BDD5 /* DisableLogsMacro.h */; };
 		53D7A63014ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */; };
 		53D7A63114ACBF4700EBB5EF /* ETRootIndexStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */; };
 		53D7A63514ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */; };
@@ -43,15 +48,18 @@
 		53D7A63814ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */; };
 		53D7A63A14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */; };
 		53D7A63B14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */; };
+		53F3B66414B5B09F001912B7 /* ETIndexPathFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 53F3B66214B5B09F001912B7 /* ETIndexPathFactory.h */; };
+		53F3B66514B5B09F001912B7 /* ETIndexPathFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 53F3B66214B5B09F001912B7 /* ETIndexPathFactory.h */; };
+		53F3B66614B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */; };
+		53F3B66714B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */; };
 		94A23F7114AA3F940071BE71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A23F7014AA3F940071BE71 /* Foundation.framework */; };
-		94A23FC714AA425F0071BE71 /* ETExpandableTreeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */; };
-		94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */; };
-		94A2405E14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */; };
-		94A2406014AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A2405C14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h */; };
-		94A2406114AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 94A2405D14AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		537B512514B5DA6200040AE4 /* ExpandableTreeFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = ExpandableTreeFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		537B512914B5DA6200040AE4 /* ExpandableTreeFW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExpandableTreeFW-Info.plist"; sourceTree = "<group>"; };
+		537B512B14B5DA6200040AE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		537B512D14B5DA6200040AE4 /* ExpandableTreeFW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTreeFW-Prefix.pch"; sourceTree = "<group>"; };
 		5382C51E14AC645D004FCA5B /* NSIndexPath+Construction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+Construction.h"; sourceTree = "<group>"; };
 		5382C51F14AC645D004FCA5B /* NSIndexPath+Construction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+Construction.m"; sourceTree = "<group>"; };
 		5382C52714AC852B004FCA5B /* ETOneLevelTreeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETOneLevelTreeView.h; sourceTree = "<group>"; };
@@ -64,10 +72,13 @@
 		53A30F5614AB163D00EE9299 /* libExpandableTree-clang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libExpandableTree-clang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A30F6414AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ETExpandableTreeView+Testing.h"; sourceTree = "<group>"; };
 		53A30F6514AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "ETExpandableTreeView+Testing.mm"; sourceTree = "<group>"; };
+		53A4A00614B2FDE700A8BDD5 /* DisableLogsMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisableLogsMacro.h; sourceTree = "<group>"; };
 		53D7A62F14ACBF4700EBB5EF /* ETRootIndexStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRootIndexStore.h; sourceTree = "<group>"; };
 		53D7A63314ACC93500EBB5EF /* UIViewWithRootItemIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewWithRootItemIndex.h; sourceTree = "<group>"; };
 		53D7A63414ACC93500EBB5EF /* UIViewWithRootItemIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewWithRootItemIndex.m; sourceTree = "<group>"; };
 		53D7A63914ACD1DD00EBB5EF /* ETRootItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETRootItemDelegate.h; sourceTree = "<group>"; };
+		53F3B66214B5B09F001912B7 /* ETIndexPathFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETIndexPathFactory.h; sourceTree = "<group>"; };
+		53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ETIndexPathFactory.mm; sourceTree = "<group>"; };
 		94A23F6D14AA3F940071BE71 /* libExpandableTree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libExpandableTree.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A23F7014AA3F940071BE71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		94A23F7414AA3F940071BE71 /* ExpandableTree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExpandableTree-Prefix.pch"; sourceTree = "<group>"; };
@@ -79,6 +90,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		537B511F14B5DA6200040AE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537B512614B5DA6200040AE4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A30F4C14AB163D00EE9299 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +117,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		537B512714B5DA6200040AE4 /* ExpandableTreeFW */ = {
+			isa = PBXGroup;
+			children = (
+				537B512814B5DA6200040AE4 /* Supporting Files */,
+			);
+			path = ExpandableTreeFW;
+			sourceTree = "<group>";
+		};
+		537B512814B5DA6200040AE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				537B512914B5DA6200040AE4 /* ExpandableTreeFW-Info.plist */,
+				537B512A14B5DA6200040AE4 /* InfoPlist.strings */,
+				537B512D14B5DA6200040AE4 /* ExpandableTreeFW-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5382C51C14AC642F004FCA5B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +158,23 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		53F3B66014B5B077001912B7 /* IndexPathFactory */ = {
+			isa = PBXGroup;
+			children = (
+				53F3B66214B5B09F001912B7 /* ETIndexPathFactory.h */,
+				53F3B66314B5B09F001912B7 /* ETIndexPathFactory.mm */,
+			);
+			path = IndexPathFactory;
+			sourceTree = "<group>";
+		};
 		94A23F6214AA3F940071BE71 = {
 			isa = PBXGroup;
 			children = (
+				53A4A00614B2FDE700A8BDD5 /* DisableLogsMacro.h */,
 				53A30F4514AB15D100EE9299 /* ExpandableTree.h */,
 				94A23F7D14AA3FAB0071BE71 /* Sources */,
 				94A23F7314AA3F940071BE71 /* Supporting Files */,
+				537B512714B5DA6200040AE4 /* ExpandableTreeFW */,
 				94A23F6F14AA3F940071BE71 /* Frameworks */,
 				94A23F6E14AA3F940071BE71 /* Products */,
 			);
@@ -137,6 +185,7 @@
 			children = (
 				94A23F6D14AA3F940071BE71 /* libExpandableTree.a */,
 				53A30F5614AB163D00EE9299 /* libExpandableTree-clang.a */,
+				537B512514B5DA6200040AE4 /* ExpandableTreeFW.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,8 +210,9 @@
 		94A23F7D14AA3FAB0071BE71 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5382C51C14AC642F004FCA5B /* Extensions */,
 				53A30F6314AB2B3900EE9299 /* Detail */,
+				5382C51C14AC642F004FCA5B /* Extensions */,
+				53F3B66014B5B077001912B7 /* IndexPathFactory */,
 				94A23FC514AA425F0071BE71 /* ETExpandableTreeView.h */,
 				94A23FC614AA425F0071BE71 /* ETExpandableTreeView.mm */,
 				94A2405A14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h */,
@@ -180,15 +230,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		537B512014B5DA6200040AE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537B513214B5DB0500040AE4 /* ExpandableTree.h in Headers */,
+				537B513314B5DB0500040AE4 /* ETOneLevelTreeView.h in Headers */,
+				537B513414B5DB0500040AE4 /* ETOneLevelTreeViewDataSource.h in Headers */,
+				537B513514B5DB0500040AE4 /* ETOneLevelTreeViewDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A30F4E14AB163D00EE9299 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A30F4F14AB163D00EE9299 /* ETExpandableTreeView.h in Headers */,
-				53A30F5014AB163D00EE9299 /* ETExpandableTreeViewDataSource.h in Headers */,
-				53A30F5114AB163D00EE9299 /* ETExpandableTreeViewDelegate.h in Headers */,
 				53A30F5214AB163D00EE9299 /* ExpandableTree.h in Headers */,
-				53A30F6714AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */,
 				5382C52114AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */,
 				5382C52A14AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */,
 				5382C52F14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */,
@@ -197,6 +254,8 @@
 				53D7A63614ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */,
 				53D7A63B14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */,
 				53A269FE14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */,
+				53A4A00814B2FDE700A8BDD5 /* DisableLogsMacro.h in Headers */,
+				53F3B66514B5B09F001912B7 /* ETIndexPathFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,11 +263,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A23FC714AA425F0071BE71 /* ETExpandableTreeView.h in Headers */,
-				94A2405E14AA4F7C0071BE71 /* ETExpandableTreeViewDataSource.h in Headers */,
-				94A2406014AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.h in Headers */,
 				53A30F4614AB15D100EE9299 /* ExpandableTree.h in Headers */,
-				53A30F6614AB2B6E00EE9299 /* ETExpandableTreeView+Testing.h in Headers */,
 				5382C52014AC645D004FCA5B /* NSIndexPath+Construction.h in Headers */,
 				5382C52914AC852B004FCA5B /* ETOneLevelTreeView.h in Headers */,
 				5382C52E14AC8591004FCA5B /* ETOneLevelTreeViewDataSource.h in Headers */,
@@ -217,12 +272,35 @@
 				53D7A63514ACC93500EBB5EF /* UIViewWithRootItemIndex.h in Headers */,
 				53D7A63A14ACD1DD00EBB5EF /* ETRootItemDelegate.h in Headers */,
 				53A269FD14AE0FCE00D04855 /* UIView+RemoveSubviews.h in Headers */,
+				53A4A00714B2FDE700A8BDD5 /* DisableLogsMacro.h in Headers */,
+				53F3B66414B5B09F001912B7 /* ETIndexPathFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		537B512414B5DA6200040AE4 /* ExpandableTreeFW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 537B513014B5DA6200040AE4 /* Build configuration list for PBXNativeTarget "ExpandableTreeFW" */;
+			buildPhases = (
+				537B511D14B5DA6200040AE4 /* Framework begin */,
+				537B511E14B5DA6200040AE4 /* Sources */,
+				537B511F14B5DA6200040AE4 /* Frameworks */,
+				537B512014B5DA6200040AE4 /* Headers */,
+				537B512114B5DA6200040AE4 /* Resources */,
+				537B512214B5DA6200040AE4 /* Framework fix headers */,
+				537B512314B5DA6200040AE4 /* Framework end */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpandableTreeFW;
+			productName = ExpandableTreeFW;
+			productReference = 537B512514B5DA6200040AE4 /* ExpandableTreeFW.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
 		53A30F4814AB163D00EE9299 /* ExpandableTree-clang */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53A30F5314AB163D00EE9299 /* Build configuration list for PBXNativeTarget "ExpandableTree-clang" */;
@@ -280,22 +358,90 @@
 			targets = (
 				94A23F6C14AA3F940071BE71 /* ExpandableTree */,
 				53A30F4814AB163D00EE9299 /* ExpandableTree-clang */,
+				537B512414B5DA6200040AE4 /* ExpandableTreeFW */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		537B512114B5DA6200040AE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537B512C14B5DA6200040AE4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		537B511D14B5DA6200040AE4 /* Framework begin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework begin";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n  ([[ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]] || \\\n    ([[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n     [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n     [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n    )\n  )\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nif [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nfi\n";
+		};
+		537B512214B5DA6200040AE4 /* Framework fix headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework fix headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INLINED_PYHON_SCRIPT=\"import sys; import os.path; headerPathFromFind = sys.argv[2]; srcRoot = sys.argv[1]; headerPathFromFindWithoutFilename = os.path.dirname( headerPathFromFind ); relatedPathForDirectory = os.path.relpath( headerPathFromFindWithoutFilename, srcRoot ); print( relatedPathForDirectory );\"\n\nHEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$( ls -1 \"$FRAMEWORK_HEADERS_DIR\" )\n\n\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n\n   FIND_RESULT=$( find \"$HEADERS_ROOT\" -name \"$PUBLIC_HEADER\" )\n   RELATIVE_PATH=$( python -c \"$INLINED_PYHON_SCRIPT\" \"$HEADERS_ROOT\" \"$FIND_RESULT\" )\n\n   mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n   mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\ndone\n";
+		};
+		537B512314B5DA6200040AE4 /* Framework end */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework end";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\n    echo \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n    # Make sure the other platform gets built\n    \n    echo \"Build other platform\"\n    \n    echo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    \n    \n    # Build the fat static library binary\n    \n    echo \"Create universal static library\"\n    \n    echo \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \n    echo mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n    # Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n    \n    echo \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n    \n    echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		537B511E14B5DA6200040AE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537B513614B5DB4200040AE4 /* NSIndexPath+Construction.m in Sources */,
+				537B513714B5DB4200040AE4 /* UIView+RemoveSubviews.mm in Sources */,
+				537B513814B5DB4200040AE4 /* ETIndexPathFactory.mm in Sources */,
+				537B513914B5DB4200040AE4 /* ETExpandableTreeView.mm in Sources */,
+				537B513A14B5DB4200040AE4 /* ETExpandableTreeViewDelegate.mm in Sources */,
+				537B513B14B5DB4200040AE4 /* ETOneLevelTreeView.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A30F4914AB163D00EE9299 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A30F4A14AB163D00EE9299 /* ETExpandableTreeView.mm in Sources */,
-				53A30F4B14AB163D00EE9299 /* ETExpandableTreeViewDelegate.mm in Sources */,
-				53A30F6914AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */,
 				5382C52314AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */,
 				5382C52C14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */,
 				53D7A63814ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
 				53A26A0014AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
+				53F3B66714B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,19 +449,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94A23FC814AA425F0071BE71 /* ETExpandableTreeView.mm in Sources */,
-				94A2406114AA4F7C0071BE71 /* ETExpandableTreeViewDelegate.mm in Sources */,
-				53A30F6814AB2B6E00EE9299 /* ETExpandableTreeView+Testing.mm in Sources */,
 				5382C52214AC645D004FCA5B /* NSIndexPath+Construction.m in Sources */,
 				5382C52B14AC852B004FCA5B /* ETOneLevelTreeView.mm in Sources */,
 				53D7A63714ACC93500EBB5EF /* UIViewWithRootItemIndex.m in Sources */,
 				53A269FF14AE0FCE00D04855 /* UIView+RemoveSubviews.mm in Sources */,
+				53F3B66614B5B09F001912B7 /* ETIndexPathFactory.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		537B512A14B5DA6200040AE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				537B512B14B5DA6200040AE4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		537B512E14B5DA6200040AE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExpandableTreeFW/ExpandableTreeFW-Prefix.pch";
+				INFOPLIST_FILE = "ExpandableTreeFW/ExpandableTreeFW-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		537B512F14B5DA6200040AE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExpandableTreeFW/ExpandableTreeFW-Prefix.pch";
+				INFOPLIST_FILE = "ExpandableTreeFW/ExpandableTreeFW-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 		53A30F5414AB163D00EE9299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -354,6 +539,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -363,13 +552,20 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ..;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Debug;
 		};
@@ -379,16 +575,27 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ..;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "i386 armv6 armv7";
 			};
 			name = Release;
 		};
@@ -425,6 +632,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		537B513014B5DA6200040AE4 /* Build configuration list for PBXNativeTarget "ExpandableTreeFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				537B512E14B5DA6200040AE4 /* Debug */,
+				537B512F14B5DA6200040AE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		53A30F5314AB163D00EE9299 /* Build configuration list for PBXNativeTarget "ExpandableTree-clang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

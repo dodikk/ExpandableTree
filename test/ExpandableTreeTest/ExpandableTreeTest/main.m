@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
    
    setenv( "GHUNIT_AUTORUN" , "YES", 1 );
    setenv( "WRITE_JUNIT_XML", "YES", 1 );
-   //setenv( "GHUNIT_AUTOEXIT" , "YES", 1 ); // Not supported in the official GHUNIT
+   setenv( "GHUNIT_AUTOEXIT" , "YES", 1 ); // Not supported in the official GHUNIT
    NSSetUncaughtExceptionHandler(&exceptionHandler);
    
    int retVal = 0;
