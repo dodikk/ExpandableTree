@@ -7,6 +7,9 @@
 #include <algorithm>
 #include <map>
 
+//disable logging workaround
+#import <ExpandableTree/DisableLogsMacro.h>
+
 @interface ViewController()
 {
 @private
@@ -91,7 +94,7 @@ numberOfChildItemsForRootAtIndex:( NSInteger )root_index_
 }
 
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
-cellForRootItemAtIndex:( NSInteger )root_index_
+contentViewForRootItemAtIndex:( NSInteger )root_index_
 {
    UIView* result_ = [ self.streamsModel streamGroupViewForIndex: root_index_ ];
    NSLog( @"ETOneLevelTreeViewDataSource->cellForRootItemAtIndex[%d] - %@", root_index_, result_ );
@@ -100,14 +103,11 @@ cellForRootItemAtIndex:( NSInteger )root_index_
 }
 
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
-cellForChildItemAtIndex:( NSInteger )child_index_
+contentViewForChildItemAtIndex:( NSInteger )child_index_
        parentIndex:( NSInteger )root_index_
 {
    ETExpandableItem* item_ = self->expandableSections[ root_index_ ];
-   UILabel* result_ = (UILabel*)[ item_ childViewCellAtIndex: child_index_ ];
-
-   //result_.frame.size.width = self.treeView.frame.size.width;
-
+   UIView* result_ = [ item_ childViewCellAtIndex: child_index_ ];
    
    if ( root_index_ != self.streamsModel.streamsIndex )
    {
@@ -119,24 +119,19 @@ cellForChildItemAtIndex:( NSInteger )child_index_
    return result_;
 }
 
--(BOOL)treeView:( ETOneLevelTreeView* )tree_view_
-isExpandedRootItemAtIndex:( NSInteger )root_index_
-{
-   ETExpandableItem* root_item_ = self->expandableSections[ root_index_ ];
-   return root_item_.isExpanded;
-}
-
 #pragma mark -
 #pragma mark ETOneLevelTreeViewDelegate
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
 expandButtonForRootItemAtIndex:( NSInteger )root_index_
-{
-   ETExpandableItem* item_ = self->expandableSections[ root_index_ ];
-   UIView* result_ = item_.expandButton;
-   
-   return result_;
+{  
+   return [ ETSButtonsFactory expandButtonView ];
 }
 
+-(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
+collapseButtonForRootItemAtIndex:( NSInteger )root_index_
+{
+   return [ ETSButtonsFactory collapseButtonView ];
+}
 
 #pragma mark Child node selection
 -(void)treeView:(ETOneLevelTreeView *)tree_view_
@@ -159,11 +154,6 @@ didSelectChildItemAtIndex:( NSInteger )child_index_
 didToggleRootItemAtIndex:( NSInteger )root_index_
 {
    NSLog( @"ETOneLevelTreeViewDelegate->didToggleRootItemAtIndex:[%d]", root_index_ );
-
-   ETExpandableItem* item_ = self->expandableSections[ root_index_ ];
-   item_.isExpanded = !item_.isExpanded;
-
-   //[ self.treeView reloadData ];
 }
 
 @end

@@ -5,11 +5,15 @@
 
 @protocol ETOneLevelTreeViewDelegate <NSObject>
 
-@optional
+@required
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
 expandButtonForRootItemAtIndex:( NSInteger )root_index_;
 
+-(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
+collapseButtonForRootItemAtIndex:( NSInteger )root_index_;
 
+
+@optional
 #pragma mark Child node selection
 -(void)treeView:(ETOneLevelTreeView *)tree_view_
 willSelectChildItemAtIndex:( NSInteger )child_index_
@@ -23,7 +27,6 @@ didSelectChildItemAtIndex:( NSInteger )child_index_
 #pragma mark Root node selection
 -(void)treeView:(ETOneLevelTreeView *)tree_view_
 didToggleRootItemAtIndex:( NSInteger )root_index_;
-
 
 @end
 

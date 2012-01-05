@@ -4,9 +4,6 @@
 #import "ETExpandableTreeViewDelegate.h"
 
 
-#warning Remove this include
-#import "ETExpandableTreeView+Testing.h"
-
 @interface ETExpandableTreeView () < UITableViewDelegate, UITableViewDataSource >
 
 @property ( nonatomic, assign ) id< UITableViewDelegate > tableViewDelegate;
@@ -77,8 +74,6 @@
       _expandedNodes = [ NSMutableSet set ];
    }
 
-#warning Remove this invokation
-   //_expandedNodes = [ self defaultExpandedNodes ];
    return _expandedNodes;
 }
 
