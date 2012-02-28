@@ -68,6 +68,8 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    
    self.tableView.frame = table_frame_;
    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+   self.tableView.backgroundColor = [ UIColor clearColor ];
+   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
    
    [ self addSubview: self.tableView ];
 }
@@ -173,7 +175,7 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
                  expandButtonForRootItemAtIndex: root_index_ ];
    }  
 
-   expand_button_.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+   expand_button_.autoresizingMask = UIViewAutoresizingNone;
    return expand_button_;
 }
 
@@ -332,7 +334,7 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
                                                              section: root_index_ ];
    
    [ self.tableView insertRowsAtIndexPaths: insertion_
-                          withRowAnimation: UITableViewRowAnimationTop ];
+                          withRowAnimation: UITableViewRowAnimationFade ];
 }
 
 -(void)collapseChildrenForRootItem:( NSInteger )root_index_
@@ -345,22 +347,21 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
                                                             section: root_index_ ];
    
    [ self.tableView deleteRowsAtIndexPaths: deletion_
-                          withRowAnimation: UITableViewRowAnimationTop ];
+                          withRowAnimation: UITableViewRowAnimationFade ];
 }
 
 
 -(UITableViewCell *)rootCellAtIndex:( NSInteger )root_index_
 {
-   static NSString* const reuse_id_ = @"RootCell";
+   static NSString* const reuse_identifier_ = @"RootCell";
    
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
+   UITableViewCell* result_ = [ self dequeueReusableCellWithIdentifier: reuse_identifier_ ];
    
    if ( nil == result_ )
    {
       result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault 
-                                          reuseIdentifier: reuse_id_ ];
+                                          reuseIdentifier: reuse_identifier_ ];
    }
-
 
    [ result_.contentView removeAllSubviews ];
    
@@ -391,42 +392,29 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
    // combine
    CGRect expand_button_rect_ = expand_button_.frame;
    expand_button_rect_.origin = CGPointZero;
-   expand_button_rect_.size.height = result_.contentView.frame.size.height;
 
    content_view_frame_.origin.x = expand_button_rect_.size.width;
-   
+
    expand_button_.frame = expand_button_rect_;
+   expand_button_.center = CGPointMake( expand_button_.center.x, result_.contentView.center.y );
    content_view_.frame  = content_view_frame_;
-   
+
    [ result_.contentView addSubview: expand_button_ ];
 
    
    return result_;
 }
 
--(UITableViewCell *)childCellAtIndexPath:(NSIndexPath *)indexPath_
+-(id)dequeueReusableCellWithIdentifier:( NSString* )reuse_identifier_
 {
-   static NSString* const reuse_id_ = @"ChildCell";
-   
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
-   if ( nil == result_ )
-   {
-      result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                          reuseIdentifier: reuse_id_ ];      
-   }
-
-   [ result_.contentView removeAllSubviews ];
-   UIView* content_view_ = [ self.dataSource treeView: self
-                       contentViewForChildItemAtIndex: indexPath_.row - ETHeaderCell
-                                          parentIndex: indexPath_.section ];
-   
-   content_view_.frame = result_.contentView.frame;
-   content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-   [ result_.contentView addSubview: content_view_ ];
-
-   
-   return result_;
+   return [ self.tableView dequeueReusableCellWithIdentifier: reuse_identifier_ ];
 }
 
+-(UITableViewCell *)childCellAtIndexPath:(NSIndexPath *)index_path_
+{
+   return [ self.dataSource treeView: self
+             cellForChildItemAtIndex: index_path_.row - ETHeaderCell
+                         parentIndex: index_path_.section ];
+}
 
 @end

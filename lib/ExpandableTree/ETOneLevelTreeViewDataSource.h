@@ -1,6 +1,5 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@class UIView;
 @class ETOneLevelTreeView;
 
 @protocol ETOneLevelTreeViewDataSource <NSObject>
@@ -18,8 +17,16 @@ numberOfChildItemsForRootAtIndex:( NSInteger )root_index_;
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
 contentViewForRootItemAtIndex:( NSInteger )root_index_;
 
+@optional
+
+
+
 -(UIView*)treeView:( ETOneLevelTreeView* )tree_view_
-contentViewForChildItemAtIndex:( NSInteger )schild_index_
+contentViewForChildItemAtIndex:( NSInteger )child_index_
        parentIndex:( NSInteger )root_index_;
+
+-(UITableViewCell*)treeView:( ETOneLevelTreeView* )tree_view_
+    cellForChildItemAtIndex:( NSInteger )child_index_
+                parentIndex:( NSInteger )root_index_;
 
 @end
