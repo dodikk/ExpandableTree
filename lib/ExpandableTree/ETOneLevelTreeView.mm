@@ -9,14 +9,11 @@
 
 #import "ETIndexPathFactory.h"
 
-#import "UIView+RemoveSubviews.h"
-
 #include <map>
 
 //disable logging workaround
 #import "DisableLogsMacro.h"
 
-static const NSInteger ETHeaderCellIndex = 0;
 static const NSInteger ETHeaderCell      = 1;
 
 typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
@@ -62,12 +59,11 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    self.tableView = [ UITableView new ];
    self.tableView.dataSource = self;
    self.tableView.delegate   = self;
-   
-   CGRect table_frame_ = self.frame;
-   table_frame_.origin = CGPointZero;
-   
-   self.tableView.frame = table_frame_;
+
+   self.tableView.frame = self.bounds;
    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+   self.tableView.backgroundColor = [ UIColor clearColor ];
+   self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
    
    [ self addSubview: self.tableView ];
 }
@@ -79,9 +75,9 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    {
       return nil;
    }
-   
+
    [ self setupTableView ];
-   
+
    return self;
 }
 
@@ -96,6 +92,12 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    [ self.tableView reloadData ];
 }
 
+-(BOOL)isRootAtIndexPath:( NSIndexPath* )index_path_
+{
+   static const NSInteger ETHeaderCellIndex = 0;
+
+   return ETHeaderCellIndex == index_path_.row;
+}
 
 #pragma mark -
 #pragma mark DelegateSetters
@@ -151,34 +153,6 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    return 0;
 }
 
--(UIView*)expandButtonForRootItemAtIndex:( NSInteger )root_index_
-{
-   UIView* expand_button_ = nil;
-   BOOL should_query_expand_button_ = [ self.dataSource treeView: self
-                                     isExpandableRootItemAtIndex: root_index_ ];
-   if ( !should_query_expand_button_ )
-   {
-      return nil;
-   }   
-
-   
-   if ( [ self isExpandedRootItemAtIndex: root_index_ ] )
-   {
-      expand_button_ = [ self.delegate treeView: self 
-               collapseButtonForRootItemAtIndex: root_index_ ];
-   }
-   else
-   {
-      expand_button_ = [ self.delegate treeView: self
-                 expandButtonForRootItemAtIndex: root_index_ ];
-   }  
-
-   expand_button_.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-   return expand_button_;
-}
-
-#pragma mark -
-#pragma mark assertions
 -(BOOL)assertDelegates
 {
    if ( nil == self.delegate )
@@ -231,61 +205,60 @@ typedef std::map< NSInteger, BOOL > ExpandedStateMapType;
    return result_;
 }
 
--(UITableViewCell*)tableView:(UITableView *)tableView_
-        cellForRowAtIndexPath:(NSIndexPath *)indexPath_
+-(UITableViewCell*)tableView:( UITableView* )table_view_
+       cellForRowAtIndexPath:( NSIndexPath* )index_path_
 {
    NSLog( @"ETOneLevelTreeView->cellForRowAtIndexPath - invoked" );
    
-   [ self assertTableView: tableView_ ];
+   [ self assertTableView: table_view_ ];
 
    UITableViewCell* result_ = nil;
    
-   if ( ETHeaderCellIndex == indexPath_.row )
+   if ( [ self isRootAtIndexPath: index_path_ ] )
    {
-      result_ = [ self rootCellAtIndex: indexPath_.section ];
+      result_ = [ self rootCellAtIndex: index_path_.section ];
    }
    else
    {
-      result_ = [ self childCellAtIndexPath: indexPath_ ];
+      result_ = [ self childCellAtIndexPath: index_path_ ];
    }
    
-   NSLog( @"ETOneLevelTreeView->cellForRowAtIndexPath[%@] - %@", indexPath_, result_ );
+   NSLog( @"ETOneLevelTreeView->cellForRowAtIndexPath[%@] - %@", index_path_, result_ );
    
    return result_;
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
--(NSIndexPath*)tableView:(UITableView*)tableView_
-willSelectRowAtIndexPath:(NSIndexPath*)indexPath_
+-(NSIndexPath*)tableView:(UITableView*)table_view_
+willSelectRowAtIndexPath:(NSIndexPath*)index_path_
 {
-   [ self assertTableView: tableView_ ];
+   [ self assertTableView: table_view_ ];
    
-   if ( ETHeaderCellIndex != indexPath_.row )
+   if ( ![ self isRootAtIndexPath: index_path_ ] )
    {      
       [ self.delegate treeView: self
-    willSelectChildItemAtIndex: indexPath_.row - ETHeaderCell
-                   forRootItem: indexPath_.section ];
+    willSelectChildItemAtIndex: index_path_.row - ETHeaderCell
+                   forRootItem: index_path_.section ];
    }
    
-   return indexPath_;
+   return index_path_;
 }
 
--(void)tableView:(UITableView*)tableView_
-didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
+-(void)tableView:(UITableView*)table_view_
+didSelectRowAtIndexPath:(NSIndexPath*)index_path_
 {
-   [ self assertTableView: tableView_ ];
+   [ self assertTableView: table_view_ ];
    
-   if ( ETHeaderCellIndex == indexPath_.row )
+   if ( [ self isRootAtIndexPath: index_path_ ] )
    {
-      [ self toggleRootItemAtIndex: indexPath_.section ];
+      [ self toggleRootItemAtIndex: index_path_.section ];
       return;
    }
 
-   
    [ self.delegate treeView: self 
-  didSelectChildItemAtIndex: indexPath_.row - ETHeaderCell
-                forRootItem: indexPath_.section ];
+  didSelectChildItemAtIndex: index_path_.row - ETHeaderCell
+                forRootItem: index_path_.section ];
 }
 
 -(void)toggleRootItemAtIndex:( NSInteger )root_index_
@@ -320,10 +293,16 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
    [ self.tableView endUpdates ];
 }
 
+-(UITableViewCell *)rootCellAtIndex:( NSInteger )root_index_
+{
+   return [ self.dataSource treeView: self
+              cellForRootItemAtIndex: root_index_ ];
+}
+
 #pragma mark -
 #pragma mark Helpers
 -(void)expandChildrenForRootItem:( NSInteger )root_index_
-{   
+{
    NSInteger number_of_items_to_expand_ = [ self.dataSource treeView: self
                                     numberOfChildItemsForRootAtIndex: root_index_ ];
    
@@ -332,7 +311,7 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
                                                              section: root_index_ ];
    
    [ self.tableView insertRowsAtIndexPaths: insertion_
-                          withRowAnimation: UITableViewRowAnimationTop ];
+                          withRowAnimation: UITableViewRowAnimationFade ];
 }
 
 -(void)collapseChildrenForRootItem:( NSInteger )root_index_
@@ -345,88 +324,46 @@ didSelectRowAtIndexPath:(NSIndexPath*)indexPath_
                                                             section: root_index_ ];
    
    [ self.tableView deleteRowsAtIndexPaths: deletion_
-                          withRowAnimation: UITableViewRowAnimationTop ];
+                          withRowAnimation: UITableViewRowAnimationFade ];
 }
 
-
--(UITableViewCell *)rootCellAtIndex:( NSInteger )root_index_
+- (void)tableView:( UITableView* )table_view_
+  willDisplayCell:( UITableViewCell* )cell_
+forRowAtIndexPath:( NSIndexPath* )index_path_
 {
-   static NSString* const reuse_id_ = @"RootCell";
-   
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
-   
-   if ( nil == result_ )
-   {
-      result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault 
-                                          reuseIdentifier: reuse_id_ ];
-   }
-
-
-   [ result_.contentView removeAllSubviews ];
-   
-   //content
-   UIView* content_view_ = [ self.dataSource treeView: self
-                        contentViewForRootItemAtIndex: root_index_ ];
-
-   NSAssert1( [ content_view_ isKindOfClass: [ UIView class ] ]
-             , @"ETOneLevelTreeView->rootCellAtIndex[%d] : invalid contentView received", root_index_ );
-
-   
-   CGRect content_view_frame_ = result_.contentView.frame;
-   content_view_frame_.origin = CGPointZero;
-
-   content_view_.frame = content_view_frame_;
-   content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-   [ result_.contentView addSubview: content_view_ ];      
-   
-   
-   //accessory
-   UIView* expand_button_ = [ self expandButtonForRootItemAtIndex: root_index_ ];
-   if ( nil == expand_button_ )
-   {
-      return result_;
-   }
-
-   
-   // combine
-   CGRect expand_button_rect_ = expand_button_.frame;
-   expand_button_rect_.origin = CGPointZero;
-   expand_button_rect_.size.height = result_.contentView.frame.size.height;
-
-   content_view_frame_.origin.x = expand_button_rect_.size.width;
-   
-   expand_button_.frame = expand_button_rect_;
-   content_view_.frame  = content_view_frame_;
-   
-   [ result_.contentView addSubview: expand_button_ ];
-
-   
-   return result_;
+   [ self.delegate treeView: self willDisplayCell: cell_ ];
 }
 
--(UITableViewCell *)childCellAtIndexPath:(NSIndexPath *)indexPath_
+-(CGFloat)tableView:( UITableView* )table_view_
+heightForRowAtIndexPath:( NSIndexPath* )index_path_
 {
-   static NSString* const reuse_id_ = @"ChildCell";
-   
-   UITableViewCell* result_ = [ self.tableView dequeueReusableCellWithIdentifier: reuse_id_ ];
-   if ( nil == result_ )
+   if ( [ self isRootAtIndexPath: index_path_ ] )
    {
-      result_ = [ [ UITableViewCell alloc ] initWithStyle: UITableViewCellStyleDefault
-                                          reuseIdentifier: reuse_id_ ];      
+      return [ self.delegate treeView: self
+             heightForRootItemAtIndex: index_path_.section ];
    }
 
-   [ result_.contentView removeAllSubviews ];
-   UIView* content_view_ = [ self.dataSource treeView: self
-                       contentViewForChildItemAtIndex: indexPath_.row - ETHeaderCell
-                                          parentIndex: indexPath_.section ];
-   
-   content_view_.frame = result_.contentView.frame;
-   content_view_.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-   [ result_.contentView addSubview: content_view_ ];
-
-   
-   return result_;
+   return [ self.delegate treeView: self
+         heightForChildItemAtIndex: index_path_.row - ETHeaderCell
+                       forRootItem: index_path_.section ];
 }
 
+-(NSInteger)tableView:( UITableView* )table_view_
+indentationLevelForRowAtIndexPath:( NSIndexPath* )index_path_
+{
+   return [ self isRootAtIndexPath: index_path_ ] ? 0 : 1;
+}
+
+-(id)dequeueReusableCellWithIdentifier:( NSString* )reuse_identifier_
+{
+   return [ self.tableView dequeueReusableCellWithIdentifier: reuse_identifier_ ];
+}
+
+-(UITableViewCell *)childCellAtIndexPath:(NSIndexPath *)index_path_
+{
+   return [ self.dataSource treeView: self
+             cellForChildItemAtIndex: index_path_.row - ETHeaderCell
+                         parentIndex: index_path_.section ];
+}
 
 @end
