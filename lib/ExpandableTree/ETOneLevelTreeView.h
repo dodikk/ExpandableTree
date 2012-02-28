@@ -11,5 +11,6 @@
 
 -(void)reloadData;
 
+-(id)dequeueReusableCellWithIdentifier:( NSString* )reuse_identifier_;
 
 @end
